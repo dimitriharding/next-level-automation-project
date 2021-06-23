@@ -1,3 +1,5 @@
+
+require("dotenv").config();
 const chai = require("chai");
 const allure = require("@wdio/allure-reporter").default;
 const commands = require("./support/commands.js");
@@ -7,8 +9,12 @@ const environment = process.env.ENV;
 const applitoolsKey = process.env.APPLITOOLS_API_KEY;
 const isApplitoolsEnabled = process.env.ENABLE_APPLITOOLS;
 const browsers = process.env.BROWSERS || "chrome"
+const user = process.env.NAME;
 
-require("dotenv").config();
+if(user){
+  console.log(user)
+}
+
 
 /**
  * Dynamically add capabilities based on the BROWSERS environment variables
@@ -85,6 +91,9 @@ exports.config = {
       "./tests/tipsAndTricks/basicAuthentication.test.js",
       "./tests/tipsAndTricks/multipleElements.test.js",
     ],
+    authentication: [
+      "./tests/authentication/*.js"
+    ]
   },
   // Patterns to exclude.
   exclude: [
