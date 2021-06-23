@@ -1,0 +1,6 @@
+node_modules
+workspace.code-workspace
+.env
+driver-logs
+report/allure-results
+report/json

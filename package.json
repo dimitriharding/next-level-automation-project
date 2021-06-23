@@ -1,0 +1,45 @@
+{
+  "name": "advance-test-automation-workshop",
+  "version": "1.0.0",
+  "description": "A skeleton for any test automation project. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio ./wdio.conf.js",
+    "test:percy": "percy exec -- wdio ./wdio.conf.js",
+    "test:applitools": "ENABLE_APPLITOOLS=true wdio ./wdio.conf.js",
+    "test:single": "npm run test -- --spec",
+    "test:single:percy": "npm run test:percy -- --spec",
+    "test:single:applitools": "npm run test:applitools -- --spec",
+    "test:suite": "npm run test -- --suite",
+    "report": "allure serve report/allure-results",
+    "report.slack": "node ./support/utils/slackReporter.js ../../report/json/testResults.json"
+  },
+  "author": "Dimitri Harding",
+  "license": "ISC",
+  "devDependencies": {
+    "@percy/cli": "^1.0.0-beta.52",
+    "@percy/webdriverio": "^2.0.0",
+    "@wdio/allure-reporter": "^7.7.3",
+    "@wdio/applitools-service": "^7.7.3",
+    "@wdio/cli": "^7.7.3",
+    "@wdio/local-runner": "^7.7.3",
+    "@wdio/mocha-framework": "^7.7.3",
+    "@wdio/selenium-standalone-service": "^7.7.4",
+    "@wdio/spec-reporter": "^7.7.3",
+    "@wdio/sync": "^7.7.3",
+    "chai": "^4.3.4",
+    "chromedriver": "^91.0.0",
+    "wdio-chromedriver-service": "^7.1.0",
+    "wdio-json-reporter": "^2.0.0"
+  },
+  "dependencies": {
+    "@applitools/eyes-webdriverio": "^5.31.8",
+    "allure": "^0.0.0",
+    "allure-commandline": "^2.13.8",
+    "axios": "^0.21.1",
+    "convert-excel-to-json": "^1.7.0",
+    "csv-tools": "^1.2.0",
+    "dotenv": "^10.0.0",
+    "pretty-ms": "^7.0.1"
+  }
+}
