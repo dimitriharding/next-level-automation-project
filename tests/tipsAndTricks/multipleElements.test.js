@@ -1,13 +1,12 @@
+const homePage = require("../../pages/home.page");
+
 describe("Multiple Elements", () => {
   it("Verify that all items are present have a name, price tag", () => {
     // navigate to app using base url
-    browser.url("/");
-
-    // finding all selector that match (returns an array of elements)
-    const listOfCardElements = $$(".card");
+    homePage.navigate();
 
     // loop through all element and assert they have a name, price tag, and image
-    listOfCardElements.forEach((cardElement) => {
+    homePage.listOfCardElements.forEach((cardElement) => {
       // get all the text from the element
       const nameAndPriceText = cardElement.getText();
 

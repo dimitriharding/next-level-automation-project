@@ -5,31 +5,23 @@ describe("Executing JavaScript", () => {
     // navigate to page
     theInternetApp.navigate('/notification_message_rendered')
 
-    // find selector with link text
-    const btnClickHere = $("=Click here");
-
-    btnClickHere.click();
-
-    // find selector with id
-    const txtNotification = $("#flash");
+    theInternetApp.btnClickHere.click()
 
     // assertion notification is displayed
-    expect(txtNotification).toBeDisplayed();
+    expect(theInternetApp.txtNotification).toBeDisplayed();
 
     // Executing JavaScript with WebdriverIO element
     browser.execute((element) => {
       element.style.display = "none";
-    }, txtNotification);
+    }, theInternetApp.txtNotification);
 
+    // only for demonstration
     browser.pause(5000);
 
-    expect(txtNotification).not.toBeDisplayed();
+    expect(theInternetApp.txtNotification).not.toBeDisplayed();
   });
 
   it("Verify that JavaScript can be executed in the Browser - change element display to block", () => {
-    // find selector with id
-    const txtNotification = $("#flash");
-
     // Executing JavaScript with document object
     browser.execute(() => {
       /**
@@ -44,18 +36,16 @@ describe("Executing JavaScript", () => {
       document.getElementById("flash").style.display = "block";
     });
 
+    // only for demonstration
     browser.pause(1000);
 
     // assertion notification is displayed
-    expect(txtNotification).toBeDisplayed();
+    expect(theInternetApp.txtNotification).toBeDisplayed();
   });
 
   it("Verify that JavaScript can be executed in the Browser - adding and changing content", () => {
-    // finding selector using tag
-    const header = $("h3");
-
     // assert header text before dynamic change
-    expect(header.getText()).toEqual("Notification Message");
+    expect(theInternetApp.header.getText()).toEqual("Notification Message");
 
     browser.execute(() => {
       // document.getElementsByTagName("H3") returns a NodeList of the <h2>
@@ -80,9 +70,10 @@ describe("Executing JavaScript", () => {
       para.parentNode.appendChild(newElement);
     });
 
+    // only for demonstration
     browser.pause(2000);
 
     // assert header text after dynamic change
-    expect(header.getText()).toEqual("A dynamic document");
+    expect(theInternetApp.header.getText()).toEqual("A dynamic document");
   });
 });

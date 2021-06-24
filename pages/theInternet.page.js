@@ -8,10 +8,23 @@ class TheInternetPage extends page {
   get editor() { return $('#tinymce'); }
   get iframe() { return $('#mce_0_ifr'); }
   get header() { return $('h3'); }
+  get btnClickHere() { return $('=Click here'); }
+  get fileUploadInput() { return $("#file-upload"); }
+  get fileUploadSubmit() { return $("#file-submit"); }
+  get uploadedFile() { return $("#uploaded-files"); }
+  get lnkNewWindow() { return $('.example a'); }
 
   navigate(path) {
-    super.navigate(`https://the-internet.herokuapp.com/${path}`);
+    super.navigate(`https://the-internet.herokuapp.com${path}`);
     return this;
+  }
+
+  uploadFile(filePath){
+    // set the file path as value on the file input field
+    this.fileUploadInput.setValue(filePath);
+
+    // click to start upload
+    this.fileUploadSubmit.click();
   }
 }
 

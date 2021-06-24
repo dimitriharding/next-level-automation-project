@@ -7,9 +7,9 @@
     "test": "wdio ./wdio.conf.js",
     "test:percy": "percy exec -- wdio ./wdio.conf.js",
     "test:applitools": "ENABLE_APPLITOOLS=true wdio ./wdio.conf.js",
-    "test:single": "npm run test -- --spec",
-    "test:single:percy": "npm run test:percy -- --spec",
-    "test:single:applitools": "npm run test:applitools -- --spec",
+    "test:spec": "npm run test -- --spec",
+    "test:spec:percy": "npm run test:percy -- --spec",
+    "test:spec:applitools": "npm run test:applitools -- --spec",
     "test:suite": "npm run test -- --suite",
     "report": "allure serve report/allure-results",
     "report:slack": "node ./support/utils/slackReporter.js ../../report/json/testResults.json"

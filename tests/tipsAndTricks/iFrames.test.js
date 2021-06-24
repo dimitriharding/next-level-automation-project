@@ -3,7 +3,7 @@ const theInternetApp = require('../../pages/theInternet.page');
 describe("Tips & Ticks - iFrames", () => {
   it("Verify IFrame interaction - without switching to iframe", () => {
 
-    theInternetApp.navigate('/frame')
+    theInternetApp.navigate('/iframe')
     theInternetApp.editor.waitForDisplayed();
 
     // assert that the editor have the default text
@@ -12,7 +12,7 @@ describe("Tips & Ticks - iFrames", () => {
   });
 
   it("Verify IFrame interaction - switching to iframe", () => {
-    theInternetApp.navigate('/frame')
+    theInternetApp.navigate('/iframe')
 
     // switching to iFrame using id
     browser.switchToFrame(theInternetApp.iframe);
@@ -29,8 +29,8 @@ describe("Tips & Ticks - iFrames", () => {
 
   it('Verify Nested IFrame interaction', () => {
     // TODO: Exercise for iframes
-
-    browser.url("https://the-internet.herokuapp.com/nested_frames");
+    
+    theInternetApp.navigate('/nested_frames')
 
     //....
   })

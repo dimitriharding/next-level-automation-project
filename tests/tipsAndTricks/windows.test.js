@@ -1,13 +1,11 @@
+const theInternetApp = require("../../pages/theInternet.page");
+
 describe("Handling Windows/Tabs", () => {
   it("Verify switching to a new tab - using url", () => {
-    // access the page
-    browser.url("https://the-internet.herokuapp.com/windows");
-
-    // find selector
-    const link = $(".example a");
+    theInternetApp.navigate('/windows')
 
     // click on the link to open a new window
-    link.click();
+    theInternetApp.lnkNewWindow.click();
 
     // switch window
     browser.switchWindow("/windows/new");
@@ -17,14 +15,10 @@ describe("Handling Windows/Tabs", () => {
   });
 
   it("Verify switching back to an old tab - using url", () => {
-    // access the page
-    browser.url("https://the-internet.herokuapp.com/windows");
-
-    // find selector
-    const link = $(".example a");
+    theInternetApp.navigate('/windows')
 
     // click on the link to open a new window
-    link.click();
+    theInternetApp.lnkNewWindow.click();
 
     // switch window
     browser.switchWindow("/windows/new");
