@@ -1,7 +1,8 @@
 class Page {
   constructor() {
-    this.title = "Base Page";
+    this.title = 'Base Page';
   }
+  
   navigate(path) {
     browser.url(path);
   }

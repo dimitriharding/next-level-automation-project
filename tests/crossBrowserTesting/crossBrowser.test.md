@@ -18,7 +18,7 @@ safaridriver -p 4445
 
 3. Open a new terminal and run
 ```bash
-./drivers/msedgedriver --port=4444
+./msedgedriver --port=4444
 ```
 
 ## Chrome

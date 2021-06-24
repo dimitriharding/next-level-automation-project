@@ -30,32 +30,31 @@ if(browsers?.includes("chrome")){
     "goog:chromeOptions": {
       args: ["--disable-infobars", "--window-size=1920,1440"],
     },
-  },)
+  })
 }
 
 if (browsers?.includes("edge")) {
   baseCapabilities.push({
-    browserName: "MicrosoftEdge",
-    browserVersion: "91.0.864.54",
-    path: "/drivers/msedgedriver",
+    browserName: "MicrosoftEdge"
   });
 }
 
 if (browsers.includes("safari")) {
   baseCapabilities.push({
-    browserName: "safari",
-    port: 4445,
+    browserName: "safari"
+  });
+}
+
+if(browsers.includes('firefox')){
+  baseCapabilities.push({
+    browserName: "firefox",
   });
 }
 
 const baseService = [
   [
-    "chromedriver",
-    {
-      logFileName: "wdio-chromedriver.log", // default
-      outputDir: "driver-logs", // overwrites the config.outputDir
-      args: ["--silent"],
-    },
+    "selenium-standalone",
+    { drivers: { firefox: "0.29.1", chrome: true, chromiumedge: "latest", safari: "latest" } },
   ],
 ];
 
