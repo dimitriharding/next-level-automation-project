@@ -1,6 +1,6 @@
 # Workshop Automation Project
 
-![presentation slide](https://seetyah.s3.amazonaws.com/Screen%20Shot%202021-06-23%20at%208.14.35%20AM.png)
+![presentation slide](https://seetyah.s3.amazonaws.com/Screen%20Shot%202021-06-24%20at%201.30.52%20PM.png)
 
 ***
 
