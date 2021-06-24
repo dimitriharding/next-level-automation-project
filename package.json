@@ -12,7 +12,8 @@
     "test:spec:applitools": "npm run test:applitools -- --spec",
     "test:suite": "npm run test -- --suite",
     "report": "allure serve report/allure-results",
-    "report:slack": "node ./support/utils/slackReporter.js ../../report/json/testResults.json"
+    "report:slack": "node ./support/utils/slackReporter.js ../../report/json/testResults.json",
+    "register:workshop": "npm run test:spec ./tests/authentication/registerForWorkshop.test.js"
   },
   "author": "Dimitri Harding",
   "license": "ISC",
