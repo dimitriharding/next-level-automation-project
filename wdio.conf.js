@@ -125,7 +125,7 @@ exports.config = {
         outputDir: "./report/json",
       },
     ],
-    //   [CustomReporter,
+    // [CustomReporter,
     //     {
     //       name: 'My Custom Report'
     //     }

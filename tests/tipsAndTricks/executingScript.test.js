@@ -1,9 +1,9 @@
+const theInternetApp = require("../../pages/theInternet.page");
+
 describe("Executing JavaScript", () => {
   it("Verify that JavaScript can be executed in the Browser - change element display to none", () => {
     // navigate to page
-    browser.url(
-      "https://the-internet.herokuapp.com/notification_message_rendered"
-    );
+    theInternetApp.navigate('/notification_message_rendered')
 
     // find selector with link text
     const btnClickHere = $("=Click here");
@@ -21,7 +21,7 @@ describe("Executing JavaScript", () => {
       element.style.display = "none";
     }, txtNotification);
 
-    browser.pause(1000);
+    browser.pause(5000);
 
     expect(txtNotification).not.toBeDisplayed();
   });

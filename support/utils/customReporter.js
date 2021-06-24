@@ -1,4 +1,4 @@
-const WDIOReporter = require('@wdio/reporter')
+const WDIOReporter = require('@wdio/reporter').default
 
 class CustomReporter extends WDIOReporter {
     constructor(options) {
@@ -12,7 +12,6 @@ class CustomReporter extends WDIOReporter {
     onTestPass(test) {
         this.write(`Congratulations! Your test "${test.title}" passed 👏`)
     }
-
 
     // onRunnerStart() {}
     // onBeforeCommand() {}

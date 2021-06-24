@@ -12,7 +12,9 @@
     "test:single:applitools": "npm run test:applitools -- --spec",
     "test:suite": "npm run test -- --suite",
     "report": "allure serve report/allure-results",
-    "report.slack": "node ./support/utils/slackReporter.js ../../report/json/testResults.json"
+    "report.slack": "node ./support/utils/slackReporter.js ../../report/json/testResults.json",
+    "lint": "eslint",
+    "prepare": "husky install"
   },
   "author": "Dimitri Harding",
   "license": "ISC",
@@ -29,6 +31,12 @@
     "@wdio/sync": "^7.7.3",
     "chai": "^4.3.4",
     "chromedriver": "^91.0.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.1",
     "wdio-chromedriver-service": "^7.1.0",
     "wdio-json-reporter": "^2.0.0"
   },
@@ -41,5 +49,8 @@
     "csv-tools": "^1.2.0",
     "dotenv": "^10.0.0",
     "pretty-ms": "^7.0.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
