@@ -4,7 +4,7 @@ const page = require("./page");
 class TheInternetPage extends page {
 
   // Locators are defined as getters
-  get txtNotification() { return $('#flash'); }
+  get txtNotification() { return  $('#flash'); }
   get editor() { return $('#tinymce'); }
   get iframe() { return $('#mce_0_ifr'); }
   get header() { return $('h3'); }
