@@ -22,7 +22,7 @@ if(user){
  */
 const baseCapabilities = [];
 
-if(browsers?.includes("chrome")){
+if(browsers.includes("chrome")){
   baseCapabilities.push( {
     maxInstances: 5,
     browserName: "chrome",
@@ -33,7 +33,7 @@ if(browsers?.includes("chrome")){
   })
 }
 
-if (browsers?.includes("edge")) {
+if (browsers.includes("edge")) {
   baseCapabilities.push({
     browserName: "MicrosoftEdge"
   });
