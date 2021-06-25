@@ -32,7 +32,7 @@ const notifySlack = () => {
   skipped = testData["state"]["skipped"];
   total = passed + failed + skipped;
 
-  testData?.suites?.forEach((suite) => (duration = suite.duration + duration));
+  testData.suites.forEach((suite) => (duration = suite.duration + duration));
 
   const options = {
     method: "POST",
@@ -173,7 +173,7 @@ const testData = (tests) => {
     (test) =>
       `${statusEmoji[test.state]} ${
         test.name + ` (_${prettyMilliseconds(test.duration)}_) `
-      } ${test?.error ? `\n ${test.error} \n` : "\n"}`
+      } ${test.error ? `\n ${test.error} \n` : "\n"}`
   );
   return testStrings.join("\n");
 };
