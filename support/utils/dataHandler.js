@@ -34,20 +34,13 @@ const getTestDataCSV = () => {
 
 // Want to use async/await? Add the `async` keyword to your outer function/method.
 async function getTaxCalculation(cost, state, items) {
-  let response;
 
   const requestUrl = `https://tax-by-state.vercel.app/api/get-tax?cost=${cost}&state=${state}`
   if(items){
     requestUrl + `&items=${items}`
   }
 
-  try {
-    const response = await axios.get(requestUrl);
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-  return response;
+  return axios.get(requestUrl).then((response) => response.data)
 }
 
 module.exports = { getTestDataExcel, getTestDataCSV, getTaxCalculation };
